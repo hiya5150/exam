@@ -25,6 +25,16 @@
             <input type="password" name="confirm_password" class="form-control form-control-lg <?php echo (!empty($data['confirm_password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['confirm_password']; ?>">
             <span class="invalid-feedback"><?php echo $data['confirm_password_err']; ?></span>
           </div>
+            <div class="form-group">
+                <label for="username">Username: <sup>*</sup></label>
+                <input type="username" name="username" class="form-control form-control-lg <?php echo (!empty($data['username_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['username']; ?>">
+                <span class="invalid-feedback"><?php echo $data['username_err']; ?></span>
+            </div>
+            <div class="form-group">
+                <label for="age">Age: <sup>*</sup></label>
+                <input type="age" name="age" class="form-control form-control-lg <?php echo (!empty($data['ageerr'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['age']; ?>">
+                <span class="invalid-feedback"><?php echo $data['age_err']; ?></span>
+            </div>
 
           <div class="row">
             <div class="col">

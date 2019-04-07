@@ -16,7 +16,7 @@ class Users extends Controller {
             $data =[
                 'name' => trim($_POST['name']),
                 'email' => trim($_POST['email']),
-                'username' => trim ($_POST['uswername']),
+                'username' => trim ($_POST['username']),
                 'password' => trim($_POST['password']),
                 'confirm_password' => trim($_POST['confirm_password']),
                 'age' => trim ($_POST['age']),
@@ -48,7 +48,7 @@ class Users extends Controller {
             // Validate Password
             if(empty($data['password'])){
                 $data['password_err'] = 'Pleae enter password';
-            } elseif(strlen($data['password']) < 6){
+            } elseif(strlen($data['password']) < 8){
                 $data['password_err'] = 'Password must be at least 6 characters';
             }
 
@@ -64,11 +64,13 @@ class Users extends Controller {
             // Validate Age
             if (empty($data['age'])) {
                 $data['age_err'] = 'Please enter age';
+            } elseif ($data['age']>0) {
+                $data['age_err'] = 'Password must be at least 6 characters';
             }
 
 
             // Make sure errors are empty
-            if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
+            if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])  && empty($data['username_err'])  && empty($data['age_err'])){
                 // Validated
 
                 // Hash Password
